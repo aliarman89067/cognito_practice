@@ -20,9 +20,11 @@ const App = () => {
 
   const handleLogin = async () => {
     try {
-      fetch(api + "/login", { credentials: "include" })
+      fetch(apiUri + "/login", { credentials: "include" })
         .then((res) => res.json())
-        .then((result) => (window.location.href = result.cognitoLoginURL));
+        .then((result) => {
+          window.location.href = result.congnitoLoginURL;
+        });
     } catch (error) {
       console.log(error);
     }
